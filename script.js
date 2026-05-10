@@ -495,7 +495,11 @@ function q_demCent() {
 }
 
 function q_organic() {
-  q(q_demCent, "Should the Proletarian organization be based upon organic centralism?", "Yes", () => r(q_organic, "Italian Left-Communism (Programma)"), "The revolution does not have an organizational model", () => r(q_organic, "Communization (Marxist)"));
+  q(q_demCent, "Should the Proletarian organization be based upon organic centralism?", "Yes", () => r(q_organic, "Italian Left-Communism (Programma)"), "No", q_reform), "The revolution does not have an organizational model", () => r(q_organic, "Communization (Marxist)"));
+}
+
+function q_reform() {
+    q(q_parliament, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical social democracy"), "No", () => r(q_reform, "De leonism"))
 }
 
 function q_proletarianculture() {
