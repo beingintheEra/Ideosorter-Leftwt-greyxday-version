@@ -1,0 +1,461 @@
+@font-face {
+  font-family: lemonmilk;
+  src: url("assets/fonts/LemonMilk-Regular.otf") format("opentype");
+}
+
+:root {
+  font-family: "lemonmilk", sans-serif;
+}
+
+* {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body {
+  line-height: 1.6;
+  color: #e0e0e0;
+  background-color: #050505;
+}
+
+#title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vmax;
+}
+
+#title-inner {
+  position: relative;
+  display: inline-block;
+}
+
+#logo {
+  width: 40vmax;
+  display: block;
+}
+
+.version {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(1.2vmax, -50%);
+  font-size: 1vmax;
+  white-space: nowrap;
+  text-align: left;
+  text-transform: none;
+}
+
+#subtitle {
+  margin-top: 5vmax;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #3a3a3a;
+  color: #fff;
+  margin-top: 20px;
+  padding: 1em 10em;
+  border-radius: 12px;
+  font-size: 2em;
+  box-shadow: 0 6px rgba(45, 45, 45, 0.7);
+  transition: transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10em;
+}
+
+button:hover {
+  background-color: #4a4a4a;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.btn-yes {
+  background-color: #2cd134;
+  box-shadow: 0 8px #0e7413;
+}
+
+.btn-yes:hover {
+  background-color: #2bdf34;
+}
+
+/* NO button */
+.btn-no {
+  background-color: #c62828;
+  box-shadow: 0 8px #660a0a;
+}
+
+.btn-no:hover {
+  background-color: #e53935;
+}
+
+.btn-icon {
+  font-weight: 900;
+  font-size: 1.1em;
+}
+
+/* Non-Yes/No buttons */
+
+.btn-nostate {
+  position: relative;
+  justify-content: center;
+  white-space: nowrap;
+  background-color: #6a1b9a;
+}
+
+.btn-nostate:hover {
+  background-color: #7b1fa2;
+}
+
+.btn-nostate .btn-icon-left {
+  position: absolute;
+  left: 1.1em;
+}
+
+.btn-nostate .btn-label {
+  display: inline-block;
+}
+
+.btn-organizational {
+    background-color: #e53935;
+    box-shadow: 0 8px #660a0a;
+}
+
+.btn-organizational:hover {
+    background-color: #c62828;
+}
+
+.btn-election {
+  background-color: #ff9800;
+  box-shadow: 0 8px #a16100;
+}
+
+.btn-election:hover {
+  background-color: #fb8c00;
+}
+
+.btn-revolution {
+  background-color: #d32f2f;
+  box-shadow: 0 8px #7a0000;
+}
+
+.btn-revolution:hover {
+  background-color: #e53935;
+}
+
+.btn-christianity {
+  background-color: #1976d2;
+  box-shadow: 0 8px #0b3c78;
+}
+
+.btn-christianity:hover {
+  background-color: #1e88e5;
+}
+
+.btn-islam {
+  background-color: #388e3c;
+  box-shadow: 0 8px #1b4d1b;
+}
+
+.btn-islam:hover {
+  background-color: #43a047;
+}
+
+.btn-judaism {
+  background-color: #fbc02d;
+  box-shadow: 0 8px #7a5c00;
+}
+
+.btn-judaism:hover {
+  background-color: #fdd835;
+}
+
+.btn-confucianism {
+  background-color: #00796b;
+  box-shadow: 0 8px #004d40;
+}
+
+.btn-confucianism:hover {
+  background-color: #00897b;
+}
+
+.btn-illegaltrade {
+    background-color: #424242;
+    box-shadow: 0 8px #1b1b1b;
+}
+
+.btn-illegaltrade:hover {
+    background-color: #616161;
+}
+
+.btn-insurrection {
+    background-color: #880e4f;
+    box-shadow: 0 8px #4a0026;
+}
+
+.btn-insurrection:hover {
+    background-color: #ad1457;
+}
+
+.btn-electedofficials {
+    background-color: #283593;
+    box-shadow: 0 8px #0b1f6b;
+}
+
+.btn-electedofficials:hover {
+    background-color: #303f9f;
+}
+
+.btn-strongman {
+    background-color: #c2185b;
+    box-shadow: 0 8px #6a0f2e;
+}
+
+.btn-strongman:hover {
+    background-color: #e91e63;
+}
+
+.btn-strongman {
+    background-color: #d81d1d;
+    box-shadow: 0 8px #6a0f0f;
+}
+
+.btn-strongman:hover {
+    background-color: #f44336;
+}
+
+.btn-sovereign {
+    background-color: #cabf20;
+    box-shadow: 0 8px #7a5c00;
+}
+
+.btn-sovereign:hover {
+    background-color: #fdd835;
+}
+
+.btn-biology {
+    background-color: #388e3c;
+    box-shadow: 0 8px #1b4d1b;
+}
+
+.btn-biology:hover {
+    background-color: #43a047;
+}
+
+.btn-spirits {
+    background-color: #6a1b9a;
+    box-shadow: 0 8px #3a007a;
+}
+
+.btn-spirits:hover {
+    background-color: #7b1fa2;
+}
+
+.btn-apathy {
+    background-color: #616161;
+    box-shadow: 0 8px #1b1b1b;
+}
+
+.btn-apathy:hover {
+    background-color: #757575;
+}
+
+.btn-terror {
+    background-color: #b71c1c;
+    box-shadow: 0 8px #6a0f0f;
+}
+
+.btn-terror:hover {
+    background-color: #f44336;
+}
+
+.btn-inheritance {
+    background-color: #283593;
+    box-shadow: 0 8px #0b1f6b;
+}
+
+.btn-inheritance:hover {
+    background-color: #303f9f;
+}
+
+.btn-wisdom {
+    background-color: #00796b;
+    box-shadow: 0 8px #004d40;
+}
+
+.btn-wisdom:hover {
+    background-color: #00897b;
+}
+
+.btn-god {
+    background-color: #a717d3;
+    box-shadow: 0 8px #3d0166;
+}
+
+.btn-god:hover {
+    background-color: #b715e9;
+}
+
+.btn-selection {
+    background-color: #ff9800;
+    box-shadow: 0 8px #a16100;
+}
+
+.btn-selection:hover {
+    background-color: #fb8c00;
+}
+
+.btn-strength {
+    background-color: #940f0f;
+    box-shadow: 0 8px #4a0000;
+}
+
+.btn-strength:hover {
+    background-color: #c62828;
+}
+
+.btn-directdemocracy {
+    background-color: #0097a7;
+    box-shadow: 0 8px #004d40;
+}
+
+.btn-directdemocracy:hover {
+    background-color: #00acc1;
+}
+
+.btn-peacefully {
+    background-color: #43a047;
+    box-shadow: 0 8px #1b4d1b;
+}
+
+.btn-peacefully:hover {
+    background-color: #66bb6a;
+}
+
+.btn-aggressively {
+    background-color: #d32f2f;
+    box-shadow: 0 8px #7a0000;
+}
+
+.btn-aggressively:hover {
+    background-color: #e53935;
+}
+
+.btn-trade {
+    background-color: #1976d2;
+    box-shadow: 0 8px #0b3c78;
+}
+
+.btn-trade:hover {
+    background-color: #1e88e5;
+}
+
+.btn-military {
+    background-color: #c6a128;
+    box-shadow: 0 8px #7a5c00;
+}
+
+.btn-military:hover {
+    background-color: #fbc02d;
+}
+
+.result {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 22px;
+}
+
+.result h1 {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.flag-wrap {
+  width: min(680px, 86vw);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.result-flag {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.quote-box {
+  width: min(900px, 90vw);
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+
+.quote-text,
+.quote-author {
+  text-transform: none;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 1.6rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.quote-author {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.result button {
+  margin-top: 10px;
+  padding: 1.1em 2.8em;
+  border-radius: 14px;
+  font-size: 1.6em;
+}
+
+.quiz {
+  margin-top: 5vmax;
+  margin-bottom: 5vmax;
+}
+
+.btn-icon-img {
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
+}
