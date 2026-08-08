@@ -480,3 +480,83 @@ button:active {
     padding: 0.75em 1.2em;
   }
 }
+
+/* === SPECIAL QUIZ ANSWERS START === */
+
+
+/* Reconstruction -> Fiumanism
+   Icon: spirits.svg
+*/
+.btn-reconstruction {
+    background-color: #DC0640 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #760322 !important;
+}
+
+.btn-reconstruction:hover {
+    background-color: #DC0640 !important;
+    filter: brightness(1.12);
+}
+
+
+/* Abolition -> Fascist Futurism
+   Icon: no.svg
+*/
+.btn-abolition {
+    background-color: #00074F !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #000329 !important;
+}
+
+.btn-abolition:hover {
+    background-color: #00074F !important;
+    filter: brightness(1.20);
+}
+
+
+/* Vanguard -> Ba'athism
+   Icon: strongman.svg
+*/
+.btn-vanguard {
+    background-color: #7F0000 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #400000 !important;
+}
+
+.btn-vanguard:hover {
+    background-color: #7F0000 !important;
+    filter: brightness(1.18);
+}
+
+
+/* Parliament -> Tridemism
+   Icon: elected officials.svg
+*/
+.btn-parliament {
+    background-color: #007F7F !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #003F3F !important;
+}
+
+.btn-parliament:hover {
+    background-color: #007F7F !important;
+    filter: brightness(1.15);
+}
+
+
+/* Direct Democracy -> Third International Theory
+   Icon: direct democracy.svg
+*/
+.btn-directdemocracy {
+    background-color: #007F46 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #003F23 !important;
+}
+
+.btn-directdemocracy:hover {
+    background-color: #007F46 !important;
+    filter: brightness(1.15);
+}
+
+
+/* === SPECIAL QUIZ ANSWERS END === */
