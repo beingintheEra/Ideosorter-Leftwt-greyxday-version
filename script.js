@@ -220,34 +220,7 @@ function makeButton(label, onClick) {
     btn.innerHTML = `
       <img class="btn-icon-img" src="./assets/buttons/military.svg" alt="">
       ${label}
-    `;  } else if (lower === "reconstruction") {
-    btn.classList.add("btn-reconstruction");
-    btn.innerHTML = `
-      <img class="btn-icon-img" src="./assets/buttons/spirits.svg" alt="">
-      ${label}
     `;
-
-  } else if (lower === "abolition") {
-    btn.classList.add("btn-abolition");
-    btn.innerHTML = `
-      <img class="btn-icon-img" src="./assets/buttons/no.svg" alt="">
-      ${label}
-    `;
-
-  } else if (lower === "vanguard") {
-    btn.classList.add("btn-vanguard");
-    btn.innerHTML = `
-      <img class="btn-icon-img" src="./assets/buttons/strongman.svg" alt="">
-      ${label}
-    `;
-
-  } else if (lower === "parliament") {
-    btn.classList.add("btn-parliament");
-    btn.innerHTML = `
-      <img class="btn-icon-img" src="./assets/buttons/elected officials.svg" alt="">
-      ${label}
-    `;
-
   } else {
     btn.textContent = label;
   }
@@ -534,7 +507,7 @@ function q_proletarianculture() {
 }
 
 function q_stalinCope() {
-  q(q_proletarianculture, "Can socialism be built up in one country?", "Yes", q_nepTime, "No", q_natLib);
+  q(q_demCent, "Can socialism be built up in one country?", "Yes", q_nepTime, "No", q_natLib);
 }
 
 function q_natLib() {
@@ -554,15 +527,15 @@ function q_nepTime() {
 }
 
 function q_classStruggleSocialism() {
-  q(q_nepTime, "Does class struggle continue under socialism?", "Yes", q_peopleWar, "No", () => r(q_classStruggleSocialism, "Marxism-Leninism (Khrushchev)"));
+  q(q_nepTime, "Does class struggle continue under socialism?", "Yes", q_chinaBourgeois, "No", () => r(q_classStruggleSocialism, "Marxism-Leninism (Khrushchev)"));
 }
 
 function q_chinaBourgeois() {
-  q(q_natCom, "Was the Chinese revolution a bourgeois revolution?", "Yes", () => r(q_chinaBourgeois, "Anti-Revisionist Marxism-Leninism"), "No", () => r(q_chinaBourgeois, "Marxism-Leninism"));
+  q(q_classStruggleSocialism, "Was the Chinese revolution a bourgeois revolution?", "Yes", () => r(q_chinaBourgeois, "Anti-Revisionist Marxism-Leninism"), "No", q_peopleWar);
 }
 
 function q_peopleWar() {
-  q(q_classStruggleSocialism, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", q_natCom);
+  q(q_nepTime, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", () => r(q_peopleWar, "Marxism-Leninism(Brezhnev)"));
 }
 
 function q_universalPPW() {
@@ -586,7 +559,7 @@ function q_songun() {
 }
 
 function q_partyElites() {
-  q(q_electoralism, "Should there be a small party of elites to engage in political activity?", "Yes", () => r(q_partyElites, "Council Communism (Organizational Dualism)"), "No", () => r(q_partyElites, "Council Communism (Organizational Unitarism)"));
+  q(q_massparty, "Should there be a small party of elites to engage in political activity?", "Yes", () => r(q_partyElites, "Council Communism (Organizational Dualism)"), "No", () => r(q_partyElites, "Council Communism (Organizational Unitarism)"));
 }
 
 function q_communization() {
@@ -610,15 +583,15 @@ function q_egoCom() {
 }
 
 function q_nihlism() {
-  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihilism"), "No", q_insurrection);
+  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihlism"), "No", q_insurrection);
 }
 
 function q_insurrection() {
-  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "Insurrectionary Anarchism"), "No", q_illegalism);
+  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "insurrectionary Anarchism"), "No", q_illegalism);
 }
 
 function q_illegalism() {
-  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "Individualist Anarchism"));
+  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "individualist Anarchism"));
 }
 
 function q_anarchosyn() {
@@ -626,7 +599,7 @@ function q_anarchosyn() {
 }
 
 function q_anarchoUnions() {
-  q(q_anarchosyn, "Should revolutionary unions be the primary organizational basis of our struggle and future society?", "Yes", q_proudhon, "No", q_bookchin);
+  q(q_agriculture, "Should revolutionary unions be the primary organizational basis of our struggle and future society?", "Yes", q_proudhon, "No", q_bookchin);
 }
 
 function q_proudhon() {
@@ -670,7 +643,7 @@ function q_transition() {
 }
 
 function q_postPolitical() {
-  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Faceism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
+  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Fascism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
 }
 
 function q_authSoc() {
@@ -686,7 +659,7 @@ function q_natSocAuth() {
 }
 
 function q_natSynd() {
-  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_classStruggleTool);
+  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_daJoos);
 }
 
 function q_natvfu() {
@@ -698,15 +671,19 @@ function q_traditionalValues() {
 }
 
 function q_futurism() {
-  q(q_natvfu, "Should profession groups partake in policy making ?", "Yes", q_fumivFascfu, "No", () => r(q_futurism, "Political Futurism"));
+  q(q_natvfu, "Should profession groups partake in policy making ?", "Yes", q_fumivFascfu, "No", () => r(q_natvfu, "Political Futurism"));
 }
 
 function q_fumivFascfu() {
   q(q_futurism, "What does the construction of a new culture mean for religion", "Reconstruction", () => r(q_fumivFascfu, "Fiumanism"), "Abolition", () => r(q_fumivFascfu, "Fascist Futurism"));
 }
 
+function q_daJoos() {
+  q(q_natSynd, "Are race and class closely and inseparately related?", "Yes", q_agrNazi, "No", q_classStruggleTool);
+}
+
 function q_classStruggleTool() {
-  q(q_natSynd, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
+  q(q_daJoos, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
 }
 
 function q_spiritualNation() {
@@ -715,6 +692,10 @@ function q_spiritualNation() {
 
 function q_freeParliament() {
   q(q_spiritualNation, "Should there be a free representation in parliament and freedom of speech?", "Yes", () => r(q_freeParliament, "Limonovism"), "No", () => r(q_freeParliament, "National Bolshevism"));
+}
+
+function q_agrNazi() {
+  q(q_daJoos, "Should agriculture be the main focus of the economy?", "Yes", () => r(q_agrNazi, "Strasserism"), "No", () => r(q_agrNazi, "Niekischism"));
 }
 
 function q_nazbol() {
@@ -825,14 +806,14 @@ function q_raceLarp() {
     q(q_racism, "What gives that race such superiority?", "Biology", () => r(q_raceLarp, "National Socialism"), "Spirits", () => r(q_raceLarp, "Esoteric Fascism"))
 }
 function q_palingenesis() {
-  q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes);
+    q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes)
 }
 
 function q_feudalRebirth() {
-  q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy);
+    q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy)
 }
 function q_fashClergy() {
-  q(q_feudalRebirth, "Should the clergy be part of the government?", "Yes", () => r(q_fashClergy, "Clerical Fascism"), "No", () => r(q_fashClergy, "Fascism"));
+    q(q_palingenesis, "Should the clergy be part of the government?", "Yes", () => r(q_fashClergy, "Clerical Fascism"), "No", () => r(q_fashClergy, "Fascism"))
 }
 function q_castes() {
     q(q_palingenesis, "Should a system of castes be in place?", "Yes", q_control, "No", () => r(q_castes, "Jacobinism"))
