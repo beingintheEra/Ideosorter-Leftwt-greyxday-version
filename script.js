@@ -706,7 +706,7 @@ function q_fumivFascfu() {
 }
 
 function q_classStruggleTool() {
-  q(q_daJoos, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
+  q(q_natSynd, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
 }
 
 function q_spiritualNation() {
