@@ -534,7 +534,7 @@ function q_proletarianculture() {
 }
 
 function q_stalinCope() {
-  q(q_demCent, "Can socialism be built up in one country?", "Yes", q_nepTime, "No", q_natLib);
+  q(q_proletarianculture, "Can socialism be built up in one country?", "Yes", q_nepTime, "No", q_natLib);
 }
 
 function q_natLib() {
@@ -586,7 +586,7 @@ function q_songun() {
 }
 
 function q_partyElites() {
-  q(q_massparty, "Should there be a small party of elites to engage in political activity?", "Yes", () => r(q_partyElites, "Council Communism (Organizational Dualism)"), "No", () => r(q_partyElites, "Council Communism (Organizational Unitarism)"));
+  q(q_electoralism, "Should there be a small party of elites to engage in political activity?", "Yes", () => r(q_partyElites, "Council Communism (Organizational Dualism)"), "No", () => r(q_partyElites, "Council Communism (Organizational Unitarism)"));
 }
 
 function q_communization() {
@@ -626,7 +626,7 @@ function q_anarchosyn() {
 }
 
 function q_anarchoUnions() {
-  q(q_agriculture, "Should revolutionary unions be the primary organizational basis of our struggle and future society?", "Yes", q_proudhon, "No", q_bookchin);
+  q(q_anarchosyn, "Should revolutionary unions be the primary organizational basis of our struggle and future society?", "Yes", q_proudhon, "No", q_bookchin);
 }
 
 function q_proudhon() {
