@@ -72,9 +72,12 @@ button {
   background-color: #3a3a3a;
   color: #fff;
   margin-top: 20px;
-  padding: 1em 10em;
+  width: 90%;
+  max-width: 500px;
+  padding: 0.8em 1.5em;
+  font-size: 1.4em;
+  
   border-radius: 12px;
-  font-size: 2em;
   box-shadow: 0 6px rgba(45, 45, 45, 0.7);
   transition: transform 0.1s ease;
   display: flex;
@@ -83,7 +86,6 @@ button {
   gap: 0.6em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 10em;
 }
 
 button:hover {
@@ -444,9 +446,11 @@ button:active {
 
 .result button {
   margin-top: 10px;
-  padding: 1.1em 2.8em;
+  padding: 0.8em 1.8em;
   border-radius: 14px;
-  font-size: 1.6em;
+  font-size: 1.3em;
+  width: 90%;
+  max-width: 400px;
 }
 
 .quiz {
@@ -459,85 +463,20 @@ button:active {
   height: 1.2em;
   object-fit: contain;
 }
-/* === CUSTOM ANSWER COLORS START === */
+@media (max-width: 600px) {
+  button {
+    font-size: 1.05em;
+    padding: 0.75em 1em;
+    width: 92%;
+    border-radius: 10px;
+  }
 
-/*
-   Reconstruction -> Fiumanism
-   Symbol: spirits.svg
-*/
-.btn-reconstruction {
-    background-color: #DC0640 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px #760322 !important;
+  .btn-nostate .btn-icon-left {
+    position: static; /* Allows icon and text to stack/flow cleanly on small screens */
+  }
+
+  .result button {
+    font-size: 1.1em;
+    padding: 0.75em 1.2em;
+  }
 }
-
-.btn-reconstruction:hover {
-    background-color: #DC0640 !important;
-    filter: brightness(1.12);
-}
-
-
-/*
-   Abolition -> Fascist Futurism
-   Symbol: no.svg
-*/
-.btn-abolition {
-    background-color: #00074F !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px #000329 !important;
-}
-
-.btn-abolition:hover {
-    background-color: #00074F !important;
-    filter: brightness(1.25);
-}
-
-
-/*
-   Vanguard -> Ba'athism
-   Symbol: strongman.svg
-*/
-.btn-vanguard {
-    background-color: #7F0000 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px #400000 !important;
-}
-
-.btn-vanguard:hover {
-    background-color: #7F0000 !important;
-    filter: brightness(1.20);
-}
-
-
-/*
-   Parliament -> Tridemism
-   Symbol: elected officials.svg
-*/
-.btn-parliament {
-    background-color: #007F7F !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px #004040 !important;
-}
-
-.btn-parliament:hover {
-    background-color: #007F7F !important;
-    filter: brightness(1.15);
-}
-
-
-/*
-   Direct Democracy -> Third International Theory
-   Direct Democracy sembolü script.js içinde zaten mevcut.
-*/
-.btn-directdemocracy {
-    background-color: #007F46 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px #004024 !important;
-}
-
-.btn-directdemocracy:hover {
-    background-color: #007F46 !important;
-    filter: brightness(1.15);
-}
-
-/* === CUSTOM ANSWER COLORS END === */
