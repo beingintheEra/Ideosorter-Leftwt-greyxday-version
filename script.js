@@ -427,7 +427,7 @@ function q_mutual() {
 }
 
 function q_ethnic() {
-  q(q_mutual, "Should communities be ethnically homogenous?", "Yes", () => r(q_ethnic, "National Anarchism"), "No", () => r(q_ethnic, "Mutualism"));
+  q(q_mutual, "Should communities be ethnically homogenous?", "Yes", () => r(q_ethnic, "National Anarchism"), "No", () => r(q_ethnic, "Tuckerite Mutualism"));
 }
 
 function q_communism() {
@@ -808,6 +808,7 @@ function q_raceLarp() {
 function q_palingenesis() {
     q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes)
 }
+
 function q_feudalRebirth() {
     q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy)
 }
