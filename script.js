@@ -583,15 +583,15 @@ function q_egoCom() {
 }
 
 function q_nihlism() {
-  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihlism"), "No", q_insurrection);
+  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihilism"), "No", q_insurrection);
 }
 
 function q_insurrection() {
-  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "insurrectionary Anarchism"), "No", q_illegalism);
+  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "Insurrectionary Anarchism"), "No", q_illegalism);
 }
 
 function q_illegalism() {
-  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "individualist Anarchism"));
+  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "Individualist Anarchism"));
 }
 
 function q_anarchosyn() {
