@@ -483,57 +483,47 @@ button:active {
 
 .btn-reconstruction {
     background-color: #DC0640;
-    color: #FFFFFF;
     box-shadow: 0 8px #760322;
 }
 
 .btn-reconstruction:hover {
     background-color: #DC0640;
-    filter: brightness(1.12);
 }
 
 
 .btn-abolition {
     background-color: #00074F;
-    color: #FFFFFF;
     box-shadow: 0 8px #000329;
 }
 
 .btn-abolition:hover {
     background-color: #00074F;
-    filter: brightness(1.20);
 }
 
 .btn-vanguard {
     background-color: #7F0000;
-    color: #FFFFFF;
     box-shadow: 0 8px #400000;
 }
 
 .btn-vanguard:hover {
     background-color: #7F0000;
-    filter: brightness(1.18);
 }
 
 .btn-parliament {
     background-color: #007F7F;
-    color: #FFFFFF;
     box-shadow: 0 8px #003F3F;
 }
 
 .btn-parliament:hover {
     background-color: #007F7F;
-    filter: brightness(1.15);
 }
 
 .btn-directdemocracy {
     background-color: #007F46;
-    color: #FFFFFF;
     box-shadow: 0 8px #003F23;
 }
 
 .btn-directdemocracy:hover {
     background-color: #007F46;
-    filter: brightness(1.15);
 }
 
