@@ -495,11 +495,11 @@ function q_demCent() {
 }
 
 function q_organic() {
-  q(q_demCent, "Should the Proletarian organization be based upon organic centralism?", "Yes", () => r(q_organic, "Italian Left-Communism (Programma)"), "No", q_reform), "The revolution does not have an organizational model", () => r(q_organic, "Communization (Marxist)"));
+  q(q_demCent, "Should the Proletarian organization be based upon organic centralism?", "Yes", () => r(q_organic, "Italian Left-Communism (Programma)"), "No", q_reform, "The revolution does not have an organizational model", () => r(q_organic, "Communization (Marxist)"));
 }
 
 function q_reform() {
-    q(q_parliament, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical social democracy"), "No", () => r(q_reform, "De leonism"))
+  q(q_organic, "Should we reform capitalism on the short term?", "Yes", () => r(q_reform, "Classical Social Democracy"), "No", () => r(q_reform, "De Leonism"));
 }
 
 function q_proletarianculture() {
@@ -599,11 +599,15 @@ function q_anarchosyn() {
 }
 
 function q_anarchoUnions() {
-  q(q_agriculture, "Should anarchists use unions as pre figurative forms of organization?", "Yes", q_myth, "No", q_bookchin);
+  q(q_agriculture, "Should revolutionary unions be the primary organizational basis of our struggle and future society?", "Yes", q_proudhon, "No", q_bookchin);
+}
+
+function q_proudhon() {
+  q(q_anarchoUnions, "Should revolutionary unions, as prefigurative institutions, gradually replace capitalist social relations?", "Yes", () => r(q_proudhon, "Proudhonian Mutualism"), "No", q_myth);
 }
 
 function q_myth() {
-  q(q_anarchoUnions, "Should we adopt the myth of our victory as our movement's unifier?", "Yes", () => r(q_myth, "Sorelianism"), "No", () => r(q_myth, "Anarcho-Syndicalism"));
+  q(q_proudhon, "Should we adopt the myth of our victory as our movement's unifier?", "Yes", () => r(q_myth, "Sorelianism"), "No", () => r(q_myth, "Anarcho-Syndicalism"));
 }
 
 function q_bookchin() {
@@ -635,7 +639,11 @@ function q_experts() {
 }
 
 function q_transition() {
-  q(q_weed, "Which way should be used to abolish capitalism?", "Election", () => r(q_transition, "Democratic Socialism"), "Revolution", q_authSoc);
+  q(q_weed, "Which way should be used to abolish capitalism?", "Election", q_postPolitical, "Revolution", q_authSoc);
+}
+
+function q_postPolitical() {
+  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Fascism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
 }
 
 function q_authSoc() {
@@ -655,7 +663,11 @@ function q_natSynd() {
 }
 
 function q_natvfu() {
-  q(q_natSynd, "Does the victory of the nation require the construction of a new culture ?", "Yes", q_futurism, "No", () => r(q_natvfu, "National Syndicalism"));
+  q(q_natSynd, "Does the victory of the nation require the construction of a new culture ?", "Yes", q_futurism, "No", q_traditionalValues);
+}
+
+function q_traditionalValues() {
+  q(q_natvfu, "Should the nation return to traditional values and unite with people who share a similar national identity in order to return to its former glory?", "Yes", () => r(q_traditionalValues, "Falangism"), "No", () => r(q_traditionalValues, "National Syndicalism"));
 }
 
 function q_futurism() {
@@ -667,7 +679,19 @@ function q_fumivFascfu() {
 }
 
 function q_daJoos() {
-  q(q_natSynd, "Are race and class closely and inseparately related?", "Yes", q_agrNazi, "No", q_nazbol);
+  q(q_natSynd, "Are race and class closely and inseparately related?", "Yes", q_agrNazi, "No", q_classStruggleTool);
+}
+
+function q_classStruggleTool() {
+  q(q_daJoos, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
+}
+
+function q_spiritualNation() {
+  q(q_classStruggleTool, "Do you define your race and nation not by blood ties or ethnic origins but by superior spiritual and characteristic features?", "Yes", () => r(q_spiritualNation, "Niekischism"), "No", q_freeParliament);
+}
+
+function q_freeParliament() {
+  q(q_spiritualNation, "Should there be a free representation in parliament and freedom of speech?", "Yes", () => r(q_freeParliament, "Limonovism"), "No", () => r(q_freeParliament, "National Bolshevism"));
 }
 
 function q_agrNazi() {
@@ -675,7 +699,7 @@ function q_agrNazi() {
 }
 
 function q_nazbol() {
-  q(q_daJoos, "How should the will of the people be executed?", "Vanguard", () => r(q_nazbol, "National Bolshevism"), "Parliament", () => r(q_nazbol, "Limonovism"), "Direct Democracy", () => r(q_nazbol, "Third International Theory"));
+  q(q_classStruggleTool, "How should the will of the people be executed?", "Vanguard", () => r(q_nazbol, "Ba'athism"), "Parliament", () => r(q_nazbol, "Tridemism"), "Direct Democracy", () => r(q_nazbol, "Third International Theory"));
 }
 
 function q_agrSoc() {
@@ -782,7 +806,10 @@ function q_raceLarp() {
     q(q_racism, "What gives that race such superiority?", "Biology", () => r(q_raceLarp, "National Socialism"), "Spirits", () => r(q_raceLarp, "Esoteric Fascism"))
 }
 function q_palingenesis() {
-    q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_fashClergy, "No", q_castes)
+    q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes)
+}
+function q_feudalRebirth() {
+    q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy)
 }
 function q_fashClergy() {
     q(q_palingenesis, "Should the clergy be part of the government?", "Yes", () => r(q_fashClergy, "Clerical Fascism"), "No", () => r(q_fashClergy, "Fascism"))
