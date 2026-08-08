@@ -220,7 +220,34 @@ function makeButton(label, onClick) {
     btn.innerHTML = `
       <img class="btn-icon-img" src="./assets/buttons/military.svg" alt="">
       ${label}
+    `;  } else if (lower === "reconstruction") {
+    btn.classList.add("btn-reconstruction");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/spirits.svg" alt="">
+      ${label}
     `;
+
+  } else if (lower === "abolition") {
+    btn.classList.add("btn-abolition");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/no.svg" alt="">
+      ${label}
+    `;
+
+  } else if (lower === "vanguard") {
+    btn.classList.add("btn-vanguard");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/strongman.svg" alt="">
+      ${label}
+    `;
+
+  } else if (lower === "parliament") {
+    btn.classList.add("btn-parliament");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/elected officials.svg" alt="">
+      ${label}
+    `;
+
   } else {
     btn.textContent = label;
   }
@@ -643,7 +670,7 @@ function q_transition() {
 }
 
 function q_postPolitical() {
-  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Faceism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
+  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Fascism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
 }
 
 function q_authSoc() {

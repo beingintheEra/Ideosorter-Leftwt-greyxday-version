@@ -459,3 +459,85 @@ button:active {
   height: 1.2em;
   object-fit: contain;
 }
+/* === CUSTOM ANSWER COLORS START === */
+
+/*
+   Reconstruction -> Fiumanism
+   Symbol: spirits.svg
+*/
+.btn-reconstruction {
+    background-color: #DC0640 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #760322 !important;
+}
+
+.btn-reconstruction:hover {
+    background-color: #DC0640 !important;
+    filter: brightness(1.12);
+}
+
+
+/*
+   Abolition -> Fascist Futurism
+   Symbol: no.svg
+*/
+.btn-abolition {
+    background-color: #00074F !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #000329 !important;
+}
+
+.btn-abolition:hover {
+    background-color: #00074F !important;
+    filter: brightness(1.25);
+}
+
+
+/*
+   Vanguard -> Ba'athism
+   Symbol: strongman.svg
+*/
+.btn-vanguard {
+    background-color: #7F0000 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #400000 !important;
+}
+
+.btn-vanguard:hover {
+    background-color: #7F0000 !important;
+    filter: brightness(1.20);
+}
+
+
+/*
+   Parliament -> Tridemism
+   Symbol: elected officials.svg
+*/
+.btn-parliament {
+    background-color: #007F7F !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #004040 !important;
+}
+
+.btn-parliament:hover {
+    background-color: #007F7F !important;
+    filter: brightness(1.15);
+}
+
+
+/*
+   Direct Democracy -> Third International Theory
+   Direct Democracy sembolü script.js içinde zaten mevcut.
+*/
+.btn-directdemocracy {
+    background-color: #007F46 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px #004024 !important;
+}
+
+.btn-directdemocracy:hover {
+    background-color: #007F46 !important;
+    filter: brightness(1.15);
+}
+
+/* === CUSTOM ANSWER COLORS END === */
