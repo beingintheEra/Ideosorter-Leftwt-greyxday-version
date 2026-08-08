@@ -563,11 +563,11 @@ function q_partyElites() {
 }
 
 function q_communization() {
-  q(q_dotp, "Is destroying the state enough for liberation?", "Yes", q_nature, "No", q_agriculture);
+  q(q_dotp, "Does revolution mean the self-abolition of the proletariat as a class?", "Yes", q_nature, "No", q_agriculture);
 }
 
 function q_nature() {
-  q(q_communization, "Is an exit back in nature the only way to escape capitalism?", "Yes", () => r(q_nature, "Camattism"), "No", () => r(q_nature, "Communization (Anarchist)"));
+  q(q_communization, "Does the self-abolition of the proletariat require a complete withdrawal from the society", "Yes", () => r(q_nature, "Camattism"), "No", () => r(q_nature, "Communization (Anarchist)"));
 }
 
 function q_agriculture() {
