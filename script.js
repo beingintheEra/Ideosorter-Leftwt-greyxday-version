@@ -619,7 +619,7 @@ function q_platform() {
 }
 
 function q_massMvmtRoot() {
-  q(q_platform, "Is the primary role of an anarchist federation to root itself within the broad mass movements, rather than the focus on its own organization?", "Yes", () => r(q_massMvmtRoot, "Especifismo"), "No", () => r(q_massMvmtRoot, "Platformism"));
+  q(q_platform, "Should the principles and organizational structure of an anarchist organization be based on the federative relationship among its members, rather than strict and centralized one?", "Yes", () => r(q_massMvmtRoot, "Especifismo"), "No", () => r(q_massMvmtRoot, "Platformism"));
 }
 
 function q_vouchers() {
