@@ -686,7 +686,7 @@ function q_natSocAuth() {
 }
 
 function q_natSynd() {
-  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_daJoos);
+  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_classStruggleTool);
 }
 
 function q_natvfu() {
@@ -705,10 +705,6 @@ function q_fumivFascfu() {
   q(q_futurism, "What does the construction of a new culture mean for religion", "Reconstruction", () => r(q_fumivFascfu, "Fiumanism"), "Abolition", () => r(q_fumivFascfu, "Fascist Futurism"));
 }
 
-function q_daJoos() {
-  q(q_natSynd, "Are race and class closely and inseparately related?", "Yes", q_agrNazi, "No", q_classStruggleTool);
-}
-
 function q_classStruggleTool() {
   q(q_daJoos, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
 }
@@ -719,10 +715,6 @@ function q_spiritualNation() {
 
 function q_freeParliament() {
   q(q_spiritualNation, "Should there be a free representation in parliament and freedom of speech?", "Yes", () => r(q_freeParliament, "Limonovism"), "No", () => r(q_freeParliament, "National Bolshevism"));
-}
-
-function q_agrNazi() {
-  q(q_daJoos, "Should agriculture be the main focus of the economy?", "Yes", () => r(q_agrNazi, "Strasserism"), "No", () => r(q_agrNazi, "Niekischism"));
 }
 
 function q_nazbol() {
