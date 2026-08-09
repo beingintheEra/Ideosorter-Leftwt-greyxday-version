@@ -664,7 +664,7 @@ function q_transition() {
 }
 
 function q_postPolitical() {
-  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Fascism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
+  q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Facism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
 }
 
 function q_authSoc() {
