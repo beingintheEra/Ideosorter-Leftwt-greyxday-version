@@ -552,7 +552,7 @@ function q_chinaBourgeois() {
 }
 
 function q_peopleWar() {
-  q(q_nepTime, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", () => r(q_peopleWar, q_natCom);
+  q(q_chinaBourgeois, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", q_natCom);
 }
 
 function q_universalPPW() {
@@ -568,7 +568,7 @@ function q_muhCapitalistRoaders() {
 }
 
 function q_natCom() {
-  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", "Marxism Leninism"));
+  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", () => r(q_natCom, "Marxism Leninism"));
 }
 
 function q_songun() {
