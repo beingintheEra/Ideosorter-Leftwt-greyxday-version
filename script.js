@@ -527,7 +527,11 @@ function q_nepTime() {
 }
 
 function q_classStruggleSocialism() {
-  q(q_nepTime, "Does class struggle continue under socialism?", "Yes", q_chinaBourgeois, "No", () => r(q_classStruggleSocialism, "Marxism-Leninism (Khrushchev)"));
+  q(q_nepTime, "Does class struggle continue under socialism?", "Yes", q_chinaBourgeois, "No", q_khrushBrezhnev);
+}
+
+function q_khrushBrezhnev() {
+  q(q_classStruggleSocialism, "How does socialist society advance toward full communism?", "Planned Development", () => r(q_khrushBrezhnev, "Marxism-Leninism (Khrushchev)"), "Organic Development", () => r(q_khrushBrezhnev, "Developed Socialism"));
 }
 
 function q_chinaBourgeois() {
@@ -535,7 +539,7 @@ function q_chinaBourgeois() {
 }
 
 function q_peopleWar() {
-  q(q_nepTime, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", () => r(q_peopleWar, "Marxism-Leninism(Brezhnev)"));
+  q(q_nepTime, "Should protracted guerrilla warfare be used to remove the old society?", "Yes", q_universalPPW, "No", () => r(q_peopleWar, q_natCom);
 }
 
 function q_universalPPW() {
@@ -551,7 +555,7 @@ function q_muhCapitalistRoaders() {
 }
 
 function q_natCom() {
-  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", q_chinaBourgeois);
+  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", "Marxism Leninism"));
 }
 
 function q_songun() {
@@ -583,19 +587,23 @@ function q_egoCom() {
 }
 
 function q_nihlism() {
-  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihlism"), "No", q_insurrection);
+  q(q_egoCom, "There are no demands to be made no Utopic visions to be upheld no political programs to be upheld resistance is pure negation?", "Yes", () => r(q_nihlism, "Anarcho-Nihilism"), "No", q_insurrection);
 }
 
 function q_insurrection() {
-  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "insurrectionary Anarchism"), "No", q_illegalism);
+  q(q_nihlism, "Should violent insurrection be the primary revolutionary practice?", "Yes", () => r(q_insurrection, "Insurrectionary Anarchism"), "No", q_illegalism);
 }
 
 function q_illegalism() {
-  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "individualist Anarchism"));
+  q(q_insurrection, "Is crime an inherently revolutionary act ?", "Yes", () => r(q_illegalism, "Illegalism"), "No", () => r(q_illegalism, "Individualist Anarchism"));
 }
 
 function q_anarchosyn() {
-  q(q_federation, "Should the anarchist federation adopt a diverse array of ideas and approaches ?", "Yes", () => r(q_anarchosyn, "Synthesis Anarchism"), "No", q_anarchoUnions);
+  q(q_federation, "Should an anarchist federation be loosely organized and treat different anarchist ideas equally?", "Yes", q_anarchistTendencies, "No", q_anarchoUnions);
+}
+
+function q_anarchistTendencies() {
+  q(q_anarchosyn, "Should different anarchist tendencies be united within a common theoretical and organizational framework?", "Yes", () => r(q_anarchistTendencies, "Synthesis Anarchism"), "No", () => r(q_anarchistTendencies, "Anarchism Without Adjectives"));
 }
 
 function q_anarchoUnions() {
