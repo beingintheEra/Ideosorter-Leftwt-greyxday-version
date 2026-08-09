@@ -32,6 +32,47 @@ function clearApp() {
 function makeButton(label, onClick) {
   const btn = document.createElement("button");
   const lower = label.toLowerCase();
+  const PROPP_BUTTON_CLASSES = {
+    "institutions": "btn-institutions",
+    "identity": "btn-identity",
+    "values": "btn-values",
+    "national": "btn-national",
+    "regional": "btn-regional",
+
+    "fair competition": "btn-faircompetition",
+    "fair outcomes": "btn-fairoutcomes",
+
+    "charisma": "btn-charisma",
+    "armed forces": "btn-armedforces",
+    "connections": "btn-connections",
+
+    "politics": "btn-politics",
+    "guerrilla": "btn-guerrilla",
+    "terrorism": "btn-terrorism",
+
+    "state": "btn-state",
+    "labor": "btn-labor",
+    "business": "btn-business",
+
+    "clerics": "btn-clerics",
+    "warriors": "btn-warriors",
+
+    "judgment": "btn-judgment",
+    "commandment": "btn-commandment",
+    "management": "btn-management",
+
+    "spiritual": "btn-spiritual",
+    "temporal": "btn-temporal",
+
+    "birthright": "btn-birthright",
+    "share holding": "btn-shareholding",
+    "land ownership": "btn-landownership",
+    "military honors": "btn-militaryhonors"
+  };
+
+  if (PROPP_BUTTON_CLASSES[lower]) {
+    btn.classList.add(PROPP_BUTTON_CLASSES[lower]);
+  }
 
   if (lower === "yes") {
     btn.classList.add("btn-yes");
@@ -233,7 +274,76 @@ function makeButton(label, onClick) {
       <img class="btn-icon-img" src="./assets/buttons/home.svg" alt="">
       ${label}
     `;
-    
+  } else if (lower === "charisma") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/charisma.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "armed forces") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/armed forces.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "connections") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/connections.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "clerics") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/clerics.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "warriors") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/warriors.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "judgment") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/judgment.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "commandment") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/commandment.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "management") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/management.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "spiritual") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/spiritual.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "temporal") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/temporal.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "birthright") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/birthright.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "state") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/state.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "labor") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/labor.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "business") {
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/business.svg" alt="">
+      ${label}
+    `;
   } else {
     btn.textContent = label;
   }
@@ -734,147 +844,245 @@ function q_unions() {
 /* PRO-PRIVATE PROPERTY TREE */
 
 function q_constitution() {
-    q(q_privateProperty, "Should the state be strictly limited in its scope?", "Yes", q_minarchy, "No", q_stateFunctions, "The state should not exist", q_counterEcon)
+  q(q_privateProperty, "Should the state take active measures to shape public life?", "Yes", q_stateFunctions, "No", q_minarchy, "The state should not exist", q_counterEcon);
 }
+
 function q_minarchy() {
-    q(q_constitution, "Should the state only enforce law, property and defense?", "Yes", () => r(q_minarchy, "Minarchism"), "No", q_distBert)
+  q(q_constitution, "Should the state only enforce courts, property and defense?", "Yes", () => r(q_minarchy, "Minarchism"), "No", q_distBert);
 }
+
 function q_distBert() {
-    q(q_minarchy, "Should property be made as widely owned as possible?", "Yes", () => r(q_distBert, "Libertarian Distributism"), "No", q_singleTax)
+  q(q_minarchy, "Should property be mainly owned by families and guilds?", "Yes", () => r(q_distBert, "Libertarian Distributism"), "No", q_singleTax);
 }
+
 function q_singleTax() {
-    q(q_distBert, "Should the only tax be a levy on public resource usage?", "Yes", () => r(q_singleTax, "Geolibertarianism"), "No", q_ubi)
+  q(q_distBert, "Should the only tax be a levy on public resource usage?", "Yes", () => r(q_singleTax, "Geolibertarianism"), "No", q_ubi);
 }
+
 function q_ubi() {
-    q(q_singleTax, "Should there be a universal basic income?", "Yes", () => r(q_ubi, "Social Libertarianism"), "No", q_bertWar)
+  q(q_singleTax, "Should there be a universal basic income?", "Yes", () => r(q_ubi, "Social Libertarianism"), "No", q_bertWar);
 }
+
 function q_bertWar() {
-    q(q_ubi, "Should freedom be spread around the globe by force?", "Yes", () => r(q_bertWar, "Neo-Libertarianism"), "No", q_bertTrad)
+  q(q_ubi, "Should freedom be spread around the globe by force?", "Yes", () => r(q_bertWar, "Neo-Libertarianism"), "No", q_bertTrad);
 }
+
 function q_bertTrad() {
-    q(q_bertWar, "Should local communities ensure law and order?", "Yes", () => r(q_bertTrad, "Paleolibertarianism"), "No", () => r(q_bertTrad, "Right-Libertarianism"))
+  q(q_bertWar, "Should local communities ensure law and order?", "Yes", () => r(q_bertTrad, "Paleolibertarianism"), "No", () => r(q_bertTrad, "Right-Libertarianism"));
 }
+
 function q_counterEcon() {
-    q(q_constitution, "Which method should be used to bring down the state?", "Illegal Trade", q_redMarket, "Insurrection", q_anDist)
+  q(q_constitution, "Which method should be used to bring down the state?", "Illegal Trade", q_redMarket, "Insurrection", q_anDist);
 }
+
 function q_redMarket() {
-    q(q_counterEcon, "Should coercive markets be tolerated?", "Yes", () => r(q_redMarket, "Avaritionism"), "No", () => r(q_redMarket, "Agorism"))
+  q(q_counterEcon, "Should coercive markets be tolerated?", "Yes", () => r(q_redMarket, "Avaritionism"), "No", () => r(q_redMarket, "Agorism"));
 }
+
 function q_anDist() {
-    q(q_counterEcon, "Should property be made as widely owned as possible?", "Yes", () => r(q_anDist, "Anarcho-Distributism"), "No", q_landRent)
+  q(q_counterEcon, "Should property be mainly owned by families and guilds?", "Yes", () => r(q_anDist, "Anarcho-Distributism"), "No", q_landRent);
 }
+
 function q_landRent() {
-    q(q_anDist, "Is earning rent from the land a form of theft?", "Yes", () => r(q_landRent, "Geo-Anarchism"), "No", q_coop)
+  q(q_anDist, "Should homesteaded property include the land it is built on?", "Yes", q_coop, "No", () => r(q_landRent, "Geo-Anarchism"));
 }
+
 function q_coop() {
-    q(q_landRent, "Are cooperatives preferable to hierarchical business models?", "Yes", () => r(q_coop, "Left-Rothbardianism"), "No", q_covenant)
+  q(q_landRent, "Should property titles granted by subsidies and the state be voided?", "Yes", () => r(q_coop, "Left-Rothbardianism"), "No", q_covenant);
 }
+
 function q_covenant() {
-    q(q_coop, "Should covenant communities expel unwelcome individuals?", "Yes", q_separation, "No", () => r(q_covenant, "Anarcho-Capitalism"))
+  q(q_coop, "Should covenant communities expel unwelcome individuals?", "Yes", q_separation, "No", () => r(q_covenant, "Anarcho-Capitalism"));
 }
+
 function q_separation() {
-    q(q_covenant, "How should separation of covenants occur?", "Peacefully", () => r(q_separation, "Hoppeanism"), "Aggressively", () => r(q_separation, "Nilssonianism"))
+  q(q_covenant, "How should separation of covenants occur?", "Peacefully", () => r(q_separation, "Hoppeanism"), "Aggressively", () => r(q_separation, "Nilssonianism"));
 }
+
 function q_stateFunctions() {
-    q(q_constitution, "Who should assume state functions?", "Elected officials", q_dist, "Strongman", q_total, "Sovereign", q_sovereignType)
+  q(q_constitution, "Who should assume state functions?", "Elected officials", q_dist, "Strongman", q_pragmaticStrongman, "Sovereign", q_sovereignOrganic);
 }
+
 function q_dist() {
-    q(q_stateFunctions, "Should property be made as widely owned as possible?", "Yes", q_distNeeds, "No", q_lvt)
+  q(q_stateFunctions, "Should property be mainly owned by families and guilds?", "Yes", q_distNeeds, "No", q_lvt);
 }
+
 function q_distNeeds() {
-    q(q_dist, "Should people's needs be met unconditionally?", "Yes", () => r(q_distNeeds, "Social Distributism"), "No", () => r(q_distNeeds, "Distributism"))
+  q(q_dist, "Should people's needs be met unconditionally?", "Yes", () => r(q_distNeeds, "Social Distributism"), "No", () => r(q_distNeeds, "Distributism"));
 }
+
 function q_lvt() {
-    q(q_dist, "Should land rents be given back to society?", "Yes", q_geoWelf, "No", q_trad)
+  q(q_dist, "Should land rents be given back to society?", "Yes", q_geoWelf, "No", q_trad);
 }
+
 function q_geoWelf() {
-    q(q_lvt, "Should the revenue from land rents be spent on welfare?", "Yes", () => r(q_geoWelf, "Social Georgism"), "No", () => r(q_geoWelf, "Georgism"))
+  q(q_lvt, "Should the revenue from land rents be spent on welfare?", "Yes", () => r(q_geoWelf, "Social Georgism"), "No", () => r(q_geoWelf, "Georgism"));
 }
+
 function q_trad() {
-    q(q_lvt, "Should the state and society prioritize order and stability?", "Yes", q_safetyNet, "No", q_needs)
+  q(q_lvt, "Should social institutions favor stability over reform?", "Yes", q_safetyNet, "No", q_needs);
 }
+
 function q_safetyNet() {
-    q(q_trad, "Should a social safety net protect the poor?", "Yes", q_deuxCentQuaranteSixFromages, "No", q_conIntervention)
+  q(q_trad, "Should a social safety net protect the poor?", "Yes", q_deuxCentQuaranteSixFromages, "No", q_conIntervention);
 }
+
 function q_deuxCentQuaranteSixFromages() {
-    q(q_safetyNet, "Should businesses that align with state goals be promoted?", "Yes", () => r(q_deuxCentQuaranteSixFromages, "Dirigisme"), "No", () => r(q_deuxCentQuaranteSixFromages, "Paternalistic Conservatism"))
+  q(q_safetyNet, "Who should primarily be accountable to the public?", "State officials", () => r(q_deuxCentQuaranteSixFromages, "Dirigisme"), "Social elites", () => r(q_deuxCentQuaranteSixFromages, "Paternalistic Conservatism"));
 }
+
 function q_conIntervention() {
-    q(q_safetyNet, "Should the government intervene in wars overseas?", "Yes", () => r(q_conIntervention, "Mesoconservatism"), "No", () => r(q_conIntervention, "Paleoconservatism"))
+  q(q_safetyNet, "Should the government intervene in wars overseas?", "Yes", () => r(q_conIntervention, "Mesoconservatism"), "No", q_con);
 }
+
+function q_con() {
+  q(q_conIntervention, "Which element is the most important for social stability?", "Institutions", () => r(q_con, "Classical conservatism"), "Identity", q_identityLevel, "Values", () => r(q_con, "Liberal conservatism"));
+}
+
+function q_identityLevel() {
+  q(q_con, "Which identity level should hold more power?", "National", () => r(q_identityLevel, "National conservatism"), "Regional", () => r(q_identityLevel, "Paleoconservatism"));
+}
+
 function q_needs() {
-    q(q_trad, "Should people's needs be met unconditionally?", "Yes", () => r(q_needs, "Social Democracy"), "No", q_regulation)
+  q(q_trad, "Should people's needs be met unconditionally?", "Yes", q_socCorp, "No", q_regulation);
 }
+
+function q_socCorp() {
+  q(q_needs, "Should the state enforce collective bargaining?", "Yes", () => r(q_socCorp, "Social corporatism"), "No", () => r(q_socCorp, "Social Democracy"));
+}
+
 function q_regulation() {
-    q(q_needs, "Should the economy be tightly regulated?", "Yes", q_bigBusiness, "No", q_mobility)
+  q(q_needs, "Should the economy be tightly regulated?", "Yes", q_fairness, "No", q_nationalLiberalism);
 }
-function q_bigBusiness() {
-    q(q_regulation, "Should big businesses have more social responsibilities?", "Yes", () => r(q_bigBusiness, "Ordoliberalism"), "No", () => r(q_bigBusiness, "Social Liberalism"))
+
+function q_fairness() {
+  q(q_regulation, "Which kind of fairness should regulation aim to achieve?", "Fair competition", () => r(q_fairness, "Ordoliberalism"), "Fair outcomes", q_liberalJobs);
 }
+
+function q_liberalJobs() {
+  q(q_fairness, "Should jobs be created if the market doesn't offer enough?", "Yes", () => r(q_liberalJobs, "Social Liberalism"), "No", () => r(q_liberalJobs, "Progressive liberalism"));
+}
+
+function q_nationalLiberalism() {
+  q(q_regulation, "Should tariffs and subsidies protect strategic interests?", "Yes", () => r(q_nationalLiberalism, "National liberalism"), "No", q_mobility);
+}
+
 function q_mobility() {
-    q(q_regulation, "Should the state spend to promote social mobility?", "Yes", () => r(q_mobility, "Third way"), "No", q_hegemony)
+  q(q_nationalLiberalism, "Should the state subsidize job training and superior education?", "Yes", () => r(q_mobility, "Third way"), "No", q_hegemony);
 }
+
 function q_hegemony() {
-    q(q_mobility, "Which gives the most power globally?", "Trade", () => r(q_hegemony, "Neoliberalism"), "Military", () => r(q_hegemony, "Neoconservatism"))
+  q(q_mobility, "What should be the primary means of generating global power?", "Economic leverage", () => r(q_hegemony, "Neoliberalism"), "Military readiness", () => r(q_hegemony, "Neoconservatism"));
 }
-function q_total() {
-    q(q_stateFunctions, "Should the state have a role in all aspects of society?", "Yes", q_racism, "No", q_corpo)
+
+function q_pragmaticStrongman() {
+  q(q_stateFunctions, "Should the regime follow set principles or objectives?", "Yes", q_racism, "No", q_strongmanLegit);
 }
+
+function q_strongmanLegit() {
+  q(q_pragmaticStrongman, "Where should the strongman's authority mainly come from?", "Charisma", () => r(q_strongmanLegit, "Personal autocracy"), "Armed forces", () => r(q_strongmanLegit, "Stratocracy"), "Connections", () => r(q_strongmanLegit, "Patronalism"));
+}
+
 function q_racism() {
-    q(q_total, "Should we be devoted to a race superior to all others?", "Yes", q_raceLarp, "No", q_palingenesis)
+  q(q_pragmaticStrongman, "Should struggle be waged for a race superior to all others?", "Yes", q_naziLarp, "No", q_total);
 }
+
+function q_naziLarp() {
+  q(q_racism, "How should the struggle for the race manifest itself?", "Politics", q_artaman, "Guerrilla", () => r(q_naziLarp, "Nazi maoism"), "Terrorism", () => r(q_naziLarp, "Siegism"));
+}
+
+function q_artaman() {
+  q(q_naziLarp, "Should rural life be actively promoted to strengthen the race?", "Yes", () => r(q_artaman, "Agrarian nazism"), "No", q_raceLarp);
+}
+
 function q_raceLarp() {
-    q(q_racism, "What gives that race such superiority?", "Biology", () => r(q_raceLarp, "National Socialism"), "Spirits", () => r(q_raceLarp, "Esoteric Fascism"))
+  q(q_artaman, "What gives that race such superiority?", "Biology", () => r(q_raceLarp, "National Socialism"), "Spirits", () => r(q_raceLarp, "Esoteric Fascism"));
 }
+
+function q_total() {
+  q(q_racism, "Should the state have a role in all aspects of society?", "Yes", q_palingenesis, "No", q_corpo);
+}
+
 function q_palingenesis() {
-    q(q_racism, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes)
+  q(q_total, "Should we secure the nation through a rebirth or revival?", "Yes", q_feudalRebirth, "No", q_castes);
 }
 
 function q_feudalRebirth() {
-    q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy)
+  q(q_palingenesis, "Do you think that this national rebirth or revival will be achieved by returning to feudalism?", "Yes", () => r(q_feudalRebirth, "Strasserism"), "No", q_fashClergy);
 }
+
 function q_fashClergy() {
-    q(q_palingenesis, "Should the clergy be part of the government?", "Yes", () => r(q_fashClergy, "Clerical Fascism"), "No", () => r(q_fashClergy, "Fascism"))
+  q(q_palingenesis, "Should the clergy be part of the government?", "Yes", () => r(q_fashClergy, "Clerical Fascism"), "No", () => r(q_fashClergy, "Fascism"));
 }
+
 function q_castes() {
-    q(q_palingenesis, "Should a system of castes be in place?", "Yes", q_control, "No", () => r(q_castes, "Jacobinism"))
+  q(q_palingenesis, "Should a system of castes be in place?", "Yes", q_control, "No", () => r(q_castes, "Jacobinism"));
 }
+
 function q_control() {
-    q(q_castes, "How should control over society be ensured?", "Apathy", () => r(q_control, "Fordism"), "Terror", () => r(q_control, "Orwellianism"))
+  q(q_castes, "How should control over society be ensured?", "Apathy", () => r(q_control, "Fordism"), "Terror", () => r(q_control, "Orwellianism"));
 }
+
 function q_corpo() {
-    q(q_total, "Should profession groups partake in policy making?", "Yes", q_yellow, "No", q_natDist)
+  q(q_total, "Should profession groups partake in policy making?", "Yes", q_corpoFocus, "No", q_natDist);
 }
-function q_yellow() {
-    q(q_corpo, "Should worker unions be supported in their struggle for higher wages?", "Yes", () => r(q_yellow, "Yellow Socialism"), "No", () => r(q_yellow, "State Corporatism"))
+
+function q_corpoFocus() {
+  q(q_corpo, "Whose interests should hold primacy during bargaining?", "State", () => r(q_corpoFocus, "State Corporatism"), "Labor", () => r(q_corpoFocus, "Yellow Socialism"), "Business", () => r(q_corpoFocus, "Developmentalism"));
 }
+
 function q_natDist() {
-    q(q_corpo, "Should property be made as widely owned as possible?", "Yes", () => r(q_natDist, "National Distributism"), "No", q_authWelf)
+  q(q_corpo, "Should property be mainly owned by families and guilds?", "Yes", () => r(q_natDist, "National Distributism"), "No", q_authWelf);
 }
+
 function q_authWelf() {
-    q(q_natDist, "Should compliant citizens receive extensive welfare?", "Yes", () => r(q_authWelf, "Social Authoritarianism"), "No", q_soe)
+  q(q_natDist, "Should compliant citizens receive extensive welfare?", "Yes", () => r(q_authWelf, "Social Authoritarianism"), "No", q_soe);
 }
+
 function q_soe() {
-    q(q_authWelf, "Should the state get involved in the allocation of capital?", "Yes", q_zeBugz, "No", q_klepto)
+  q(q_authWelf, "Should the state get involved in the allocation of capital?", "Yes", q_zeBugz, "No", q_klepto);
 }
+
 function q_zeBugz() {
-    q(q_soe, "Should all actors in supply chains be of equal concern?", "Yes", () => r(q_zeBugz, "Stakeholder Capitalism"), "No", () => r(q_zeBugz, "State Capitalism"))
+  q(q_soe, "Should all actors in supply chains be of equal concern?", "Yes", () => r(q_zeBugz, "Stakeholder Capitalism"), "No", () => r(q_zeBugz, "State Capitalism"));
 }
+
 function q_klepto() {
-    q(q_soe, "Should state regulations favor large conglomerates?", "Yes", () => r(q_klepto, "Corporatocracy"), "No", () => r(q_klepto, "Autocratic Capitalism"))
+  q(q_soe, "Should state regulations favor large conglomerates?", "Yes", () => r(q_klepto, "Corporatocracy"), "No", () => r(q_klepto, "Autocratic Capitalism"));
 }
+
+function q_sovereignOrganic() {
+  q(q_stateFunctions, "Should spiritual, economic and political groups be merged?", "Yes", q_spiritualFunctions, "No", q_sovereignType);
+}
+
+function q_spiritualFunctions() {
+  q(q_sovereignOrganic, "Who should assume spiritual functions?", "Clerics", () => r(q_spiritualFunctions, "Integralism"), "Warriors", () => r(q_spiritualFunctions, "Superfascism"));
+}
+
 function q_sovereignType() {
-    q(q_stateFunctions, "Where should the sovereign's legitimacy come from?", "Inheritance", q_absolute, "Wisdom", () => r(q_sovereignType, "Noocracy"), "God", q_guelph, "Selection", q_electMon, "Strength", q_weak)
+  q(q_sovereignOrganic, "Where should the sovereign's legitimacy come from?", "Inheritance", q_sovereignRole, "Wisdom", () => r(q_sovereignType, "Noocracy"), "God", q_guelph, "Selection", q_electMon, "Strength", q_weak);
 }
+
+function q_sovereignRole() {
+  q(q_sovereignType, "What should be the sovereign's primary role?", "Judgment", () => r(q_sovereignRole, "Feudal monarchy"), "Commandment", q_absolute, "Management", () => r(q_sovereignRole, "Cameralism"));
+}
+
 function q_absolute() {
-    q(q_sovereignType, "Should the sovereign be equivalent to the state?", "Yes", () => r(q_absolute, "Absolute Monarchy"), "No", () => r(q_absolute, "Hereditary Monarchy"))
+  q(q_sovereignRole, "Should the sovereign be equivalent to the state?", "Yes", () => r(q_absolute, "Absolute Monarchy"), "No", () => r(q_absolute, "Hereditary Monarchy"));
 }
+
 function q_guelph() {
-    q(q_sovereignType, "Should the government engage in secular legislation?", "Yes", () => r(q_guelph, "Divine Monarchy"), "No", () => r(q_guelph, "Theocracy"))
+  q(q_sovereignType, "Which authority should hold primacy over the state?", "Spiritual", () => r(q_guelph, "Theocracy"), "Temporal", q_temporalReligion);
 }
+
+function q_temporalReligion() {
+  q(q_guelph, "Should temporal authority lead religious institutions?", "Yes", () => r(q_temporalReligion, "Caesaropapism"), "No", () => r(q_temporalReligion, "Divine Monarchy"));
+}
+
 function q_electMon() {
-    q(q_sovereignType, "What should grant power to select the sovereign?", "Land Ownership", () => r(q_electMon, "Timocracy"), "Share Holding", () => r(q_electMon, "Neocameralism"))
+  q(q_sovereignType, "What should grant power to select the sovereign?", "Birthright", () => r(q_electMon, "Aristocracy"), "Share Holding", () => r(q_electMon, "Neocameralism"), "Land Ownership", () => r(q_electMon, "Aristotelian timocracy"), "Military Honors", () => r(q_electMon, "Platonic timocracy"));
 }
+
 function q_weak() {
-    q(q_sovereignType, "Should the weak be subjugated?", "Yes", () => r(q_weak, "Kraterocracy"), "No", () => r(q_weak, "Combatocracy"))
+  q(q_sovereignType, "Should the weak be subjugated?", "Yes", () => r(q_weak, "Kraterocracy"), "No", () => r(q_weak, "Combatocracy"));
 }

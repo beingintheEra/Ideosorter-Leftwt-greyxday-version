@@ -545,3 +545,275 @@ button:active {
   background-color: #4F7F46;
 }
 
+
+
+/* PRO-PP EXTRA BUTTON STYLES */
+
+.btn-institutions {
+  background-color: hsl(240, 35%, 40%);
+  box-shadow: 0 8px hsl(250, 35%, 25%);
+}
+
+.btn-institutions:hover {
+  background-color: hsl(240, 35%, 46%);
+}
+
+
+.btn-identity {
+  background-color: hsl(80, 60%, 40%);
+  box-shadow: 0 8px hsl(80, 60%, 25%);
+}
+
+.btn-identity:hover {
+  background-color: hsl(80, 60%, 46%);
+}
+
+
+.btn-values {
+  background-color: hsl(10, 60%, 40%);
+  box-shadow: 0 8px hsl(10, 60%, 25%);
+}
+
+.btn-values:hover {
+  background-color: hsl(10, 60%, 46%);
+}
+
+
+.btn-national {
+  background-color: hsl(220, 50%, 30%);
+  box-shadow: 0 8px hsl(220, 50%, 20%);
+}
+
+.btn-national:hover {
+  background-color: hsl(220, 50%, 37%);
+}
+
+
+.btn-regional {
+  background-color: hsl(40, 65%, 40%);
+  box-shadow: 0 8px hsl(40, 65%, 25%);
+}
+
+.btn-regional:hover {
+  background-color: hsl(40, 65%, 47%);
+}
+
+
+.btn-faircompetition {
+  background-color: hsl(20, 65%, 45%);
+  box-shadow: 0 8px hsl(20, 65%, 30%);
+}
+
+.btn-faircompetition:hover {
+  background-color: hsl(20, 65%, 52%);
+}
+
+
+.btn-fairoutcomes {
+  background-color: hsl(150, 65%, 35%);
+  box-shadow: 0 8px hsl(150, 65%, 20%);
+}
+
+.btn-fairoutcomes:hover {
+  background-color: hsl(150, 65%, 42%);
+}
+
+
+.btn-charisma {
+  background-color: hsl(20, 40%, 30%);
+  box-shadow: 0 8px hsl(20, 40%, 15%);
+}
+
+.btn-charisma:hover {
+  background-color: hsl(20, 40%, 38%);
+}
+
+
+.btn-armedforces {
+  background-color: hsl(80, 40%, 30%);
+  box-shadow: 0 8px hsl(80, 40%, 15%);
+}
+
+.btn-armedforces:hover {
+  background-color: hsl(80, 40%, 38%);
+}
+
+
+.btn-connections {
+  background-color: hsl(200, 40%, 30%);
+  box-shadow: 0 8px hsl(200, 40%, 15%);
+}
+
+.btn-connections:hover {
+  background-color: hsl(200, 40%, 38%);
+}
+
+
+.btn-politics {
+  background-color: hsl(30, 50%, 35%);
+  box-shadow: 0 8px hsl(30, 50%, 20%);
+}
+
+.btn-politics:hover {
+  background-color: hsl(30, 50%, 43%);
+}
+
+
+.btn-guerrilla {
+  background-color: hsl(345, 50%, 35%);
+  box-shadow: 0 8px hsl(345, 50%, 20%);
+}
+
+.btn-guerrilla:hover {
+  background-color: hsl(345, 50%, 43%);
+}
+
+
+.btn-terrorism {
+  background-color: hsl(60, 50%, 35%);
+  box-shadow: 0 8px hsl(60, 50%, 20%);
+}
+
+.btn-terrorism:hover {
+  background-color: hsl(60, 50%, 43%);
+}
+
+
+.btn-state {
+  background-color: hsl(200, 65%, 45%);
+  box-shadow: 0 8px hsl(200, 65%, 30%);
+}
+
+.btn-state:hover {
+  background-color: hsl(200, 65%, 52%);
+}
+
+
+.btn-labor {
+  background-color: hsl(350, 65%, 45%);
+  box-shadow: 0 8px hsl(350, 65%, 30%);
+}
+
+.btn-labor:hover {
+  background-color: hsl(350, 65%, 52%);
+}
+
+
+.btn-business {
+  background-color: hsl(45, 70%, 45%);
+  box-shadow: 0 8px hsl(45, 70%, 30%);
+}
+
+.btn-business:hover {
+  background-color: hsl(45, 70%, 52%);
+}
+
+
+.btn-clerics {
+  background-color: hsl(210, 65%, 35%);
+  box-shadow: 0 8px hsl(210, 65%, 25%);
+}
+
+.btn-clerics:hover {
+  background-color: hsl(210, 65%, 43%);
+}
+
+
+.btn-warriors {
+  background-color: hsl(350, 70%, 30%);
+  box-shadow: 0 8px hsl(350, 70%, 20%);
+}
+
+.btn-warriors:hover {
+  background-color: hsl(350, 70%, 38%);
+}
+
+
+.btn-judgment {
+  background-color: hsl(20, 45%, 50%);
+  box-shadow: 0 8px hsl(20, 45%, 35%);
+}
+
+.btn-judgment:hover {
+  background-color: hsl(20, 45%, 57%);
+}
+
+
+.btn-commandment {
+  background-color: hsl(270, 50%, 50%);
+  box-shadow: 0 8px hsl(270, 50%, 35%);
+}
+
+.btn-commandment:hover {
+  background-color: hsl(270, 50%, 57%);
+}
+
+
+.btn-management {
+  background-color: hsl(135, 45%, 40%);
+  box-shadow: 0 8px hsl(135, 45%, 25%);
+}
+
+.btn-management:hover {
+  background-color: hsl(135, 45%, 47%);
+}
+
+
+.btn-spiritual {
+  background-color: hsl(245, 35%, 45%);
+  box-shadow: 0 8px hsl(245, 35%, 30%);
+}
+
+.btn-spiritual:hover {
+  background-color: hsl(245, 35%, 52%);
+}
+
+
+.btn-temporal {
+  background-color: hsl(85, 40%, 35%);
+  box-shadow: 0 8px hsl(85, 40%, 20%);
+}
+
+.btn-temporal:hover {
+  background-color: hsl(85, 40%, 43%);
+}
+
+
+.btn-birthright {
+  background-color: hsl(350, 60%, 50%);
+  box-shadow: 0 8px hsl(350, 60%, 35%);
+}
+
+.btn-birthright:hover {
+  background-color: hsl(350, 60%, 57%);
+}
+
+
+.btn-shareholding {
+  background-color: hsl(25, 75%, 55%);
+  box-shadow: 0 8px hsl(25, 75%, 40%);
+}
+
+.btn-shareholding:hover {
+  background-color: hsl(25, 75%, 62%);
+}
+
+
+.btn-landownership {
+  background-color: hsl(100, 50%, 55%);
+  box-shadow: 0 8px hsl(100, 50%, 40%);
+}
+
+.btn-landownership:hover {
+  background-color: hsl(100, 50%, 62%);
+}
+
+
+.btn-militaryhonors {
+  background-color: hsl(230, 40%, 55%);
+  box-shadow: 0 8px hsl(230, 40%, 40%);
+}
+
+.btn-militaryhonors:hover {
+  background-color: hsl(230, 40%, 62%);
+}
