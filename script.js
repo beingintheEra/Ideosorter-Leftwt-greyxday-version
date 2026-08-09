@@ -1064,7 +1064,7 @@ function q_sovereignType() {
 }
 
 function q_sovereignRole() {
-  q(q_sovereignType, "What should be the sovereign's primary role?", "Judgment", () => r(q_sovereignRole, "Feudal monarchy"), "Commandment", q_absolute, "Management", () => r(q_sovereignRole, "Cameralism"));
+  q(q_sovereignType, "What should be the sovereign's primary role?", "Judgment", () => r(q_sovereignRole, "Feudal Monarchy"), "Commandment", q_absolute, "Management", () => r(q_sovereignRole, "Cameralism"));
 }
 
 function q_absolute() {
