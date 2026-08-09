@@ -388,9 +388,6 @@ function makeButton(label, onClick) {
   } else {
     btn.textContent = label;
   }
-  } else {
-    btn.textContent = label;
-  }
 
   btn.addEventListener("click", onClick);
   return btn;
