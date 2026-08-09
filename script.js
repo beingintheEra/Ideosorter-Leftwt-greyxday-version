@@ -221,6 +221,19 @@ function makeButton(label, onClick) {
       <img class="btn-icon-img" src="./assets/buttons/military.svg" alt="">
       ${label}
     `;
+  } else if (lower === "planned development") {
+    btn.classList.add("btn-planneddevelopment");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/planned development.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "organic development") {
+    btn.classList.add("btn-organicdevelopment");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/organic development.svg" alt="">
+      ${label}
+    `;
+    
   } else {
     btn.textContent = label;
   }
