@@ -568,7 +568,7 @@ function q_muhCapitalistRoaders() {
 }
 
 function q_natCom() {
-  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", () => r(q_natCom, "Marxism Leninism"));
+  q(q_peopleWar, "Should the revolution's main priority be the nation's liberation?", "Yes", q_songun, "No", () => r(q_natCom, "Marxism-Leninism"));
 }
 
 function q_songun() {
