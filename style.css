@@ -527,3 +527,21 @@ button:active {
     background-color: #007F46;
 }
 
+.btn-planneddevelopment {
+  background-color: #B2054A;
+  box-shadow: 0 8px #620329;
+}
+
+.btn-planneddevelopment:hover {
+  background-color: #B2054A;;
+}
+
+.btn-organicdevelopment {
+  background-color: #4F7F46;
+  box-shadow: 0 8px #284024;
+}
+
+.btn-organicdevelopment:hover {
+  background-color: #4F7F46;
+}
+
