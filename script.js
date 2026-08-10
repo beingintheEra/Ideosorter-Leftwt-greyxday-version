@@ -197,6 +197,18 @@ function makeButton(label, onClick) {
       <img class="btn-icon-img" src="./assets/buttons/direct democracy.svg" alt="">
       ${label}
     `;
+  } else if (lower === "parliament") {
+    btn.classList.add("btn-parliament");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/parliament.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "vanguard") {
+    btn.classList.add("btn-vanguard");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/vanguard.svg" alt="">
+      ${label}
+    `;
   } else if (lower === "peacefully") {
     btn.classList.add("btn-peacefully");
     btn.innerHTML = `
@@ -831,7 +843,7 @@ function q_natSocAuth() {
 }
 
 function q_natSynd() {
-  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_daJoos);
+  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_classStruggleTool);
 }
 
 function q_natvfu() {
@@ -850,24 +862,16 @@ function q_fumivFascfu() {
   q(q_futurism, "What does the construction of a new culture mean for religion", "Reconstruction", () => r(q_fumivFascfu, "Fiumanism"), "Abolition", () => r(q_fumivFascfu, "Fascist Futurism"));
 }
 
-function q_daJoos() {
-  q(q_natSynd, "Are race and class closely and inseparately related?", "Yes", q_agrNazi, "No", q_classStruggleTool);
-}
-
 function q_classStruggleTool() {
-  q(q_daJoos, "Do you think that class struggle is a tool to strengthen and 'purify' your nation or race?", "Yes", q_spiritualNation, "No", q_nazbol);
+  q(q_natSynd, "Should class struggle serve as a tool to strengthen and 'purify' the nation?", "Yes", q_spiritualNation, "No", q_nazbol);
 }
 
 function q_spiritualNation() {
-  q(q_classStruggleTool, "Do you define your race and nation not by blood ties or ethnic origins but by superior spiritual and characteristic features?", "Yes", () => r(q_spiritualNation, "Niekischism"), "No", q_freeParliament);
+  q(q_classStruggleTool, "Should the nation be defined by a spiritual character and historical destiny rather than by blood or ethnicity?", "Yes", () => r(q_spiritualNation, "Niekischism"), "No", q_freeParliament);
 }
 
 function q_freeParliament() {
   q(q_spiritualNation, "Should there be a free representation in parliament and freedom of speech?", "Yes", () => r(q_freeParliament, "Limonovism"), "No", () => r(q_freeParliament, "National Bolshevism"));
-}
-
-function q_agrNazi() {
-  q(q_daJoos, "Should agriculture be the main focus of the economy?", "Yes", () => r(q_agrNazi, "Strasserism"), "No", () => r(q_agrNazi, "Niekischism"));
 }
 
 function q_nazbol() {
