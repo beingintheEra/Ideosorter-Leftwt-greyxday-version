@@ -447,27 +447,27 @@ function q_experts() {
 }
 
 function q_transition() {
-  q(q_weed, "Which way should be used to abolish capitalism?", "Election", q_postPolitical, "Revolution", q_authSoc);
+  q(q_weed, "Which way should be used to abolish capitalism?", "Election", q_postPolitical, "Revolution", q_dugin);
 }
 
 function q_postPolitical() {
   q(q_transition, "Is present-day society post-political?", "Yes", () => r(q_postPolitical, "Smiley Facism"), "No", () => r(q_postPolitical, "Democratic Socialism"));
 }
 
-function q_authSoc() {
-  q(q_transition, "Should socialism be built and maintained through centralized authority?", "Yes", q_dugin, "No", q_agrSoc);
+function q_dugin() {
+  q(q_transition, "Should we create multipolarity between civilizations?", "Yes", () => r(q_dugin, "Fourth Theory"), "No", q_authSoc);
 }
 
-function q_dugin() {
-  q(q_authSoc, "Should we create multipolarity between civilizations?", "Yes", () => r(q_dugin, "Fourth Theory"), "No", q_natSocAuth);
+function q_authSoc() {
+  q(q_dugin, "Should socialism be built and maintained through centralized authority?", "Yes", q_natSocAuth, "No", q_agrSoc);
 }
 
 function q_natSocAuth() {
-  q(q_dugin, "Should the nation come before all else?", "Yes", q_natSynd, "No", () => r(q_natSocAuth, "State Socialism"));
+  q(q_authSoc, "Should the nation come before all else?", "Yes", q_natSynd, "No", () => r(q_natSocAuth, "State Socialism"));
 }
 
 function q_natSynd() {
-  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_classStruggleTool);
+  q(q_natSocAuth, "Should state-coordinated unions organize society?", "Yes", q_natvfu, "No", q_SovietModel);
 }
 
 function q_natvfu() {
@@ -486,20 +486,20 @@ function q_fumivFascfu() {
   q(q_futurism, "What does the construction of a new culture mean for religion", "Reconstruction", () => r(q_fumivFascfu, "Fiumanism"), "Abolition", () => r(q_fumivFascfu, "Fascist Futurism"));
 }
 
-function q_classStruggleTool() {
-  q(q_natSynd, "Should class struggle serve as a tool to strengthen and 'purify' the nation?", "Yes", q_spiritualNation, "No", q_nazbol);
+function q_SovietModel() {
+  q(q_natSynd, "Should the economy be modelled after the the soviet planned economy?", "Yes", q_nazbolGoal, "No", q_nazbol);
 }
 
-function q_spiritualNation() {
-  q(q_classStruggleTool, "Should the nation be defined by a spiritual character and historical destiny rather than by blood or ethnicity?", "Yes", () => r(q_spiritualNation, "Niekischism"), "No", q_freeParliament);
+function q_nazbolGoal() {
+  q(q_SovietModel, "What should the goal of the nationalist movement be?", "National Liberation", () => r(q_nazbolGoal, "National Bolshevism (Niekisch)"), "Empire Building", q_nazbolOrthodoxy);
 }
 
-function q_freeParliament() {
-  q(q_spiritualNation, "Should there be a free representation in parliament and freedom of speech?", "Yes", () => r(q_freeParliament, "Limonovism"), "No", () => r(q_freeParliament, "National Bolshevism"));
+function q_nazbolOrthodoxy() {
+  q(q_nazbolGoal, "Should compromises to ideological orthodoxy be made under any circumstances?", "Yes", () => r(q_nazbolOrthodoxy, "National Bolshevism (Limonov)"), "No", () => r(q_nazbolOrthodoxy, "National Bolshevism (NBF)"));
 }
 
 function q_nazbol() {
-  q(q_classStruggleTool, "How should the will of the people be executed?", "Vanguard", () => r(q_nazbol, "Ba'athism"), "Parliament", () => r(q_nazbol, "Tridemism"), "Direct Democracy", () => r(q_nazbol, "Third International Theory"));
+  q(q_SovietModel, "How should the will of the people be executed?", "Vanguard", () => r(q_nazbol, "Ba'athism"), "Parliament", () => r(q_nazbol, "Tridemism"), "Direct Democracy", () => r(q_nazbol, "Third International Theory"));
 }
 
 function q_agrSoc() {
