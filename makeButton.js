@@ -119,6 +119,18 @@ function makeButton(label, onClick) {
       <img class="btn-icon-img" src="./assets/buttons/terror.svg" alt="">
       ${label}
     `;
+   } else if (lower === "reconstruction") {
+    btn.classList.add("btn-reconstruction");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/reconstruction.svg" alt="">
+      ${label}
+   `;
+  } else if (lower === "abolition") {
+    btn.classList.add("btn-abolition");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/abolition.svg" alt="">
+      ${label}
+   `;
   } else if (lower === "inheritance") {
     btn.classList.add("btn-inheritance");
     btn.innerHTML = `
@@ -365,6 +377,18 @@ function makeButton(label, onClick) {
     btn.classList.add("btn-business");
     btn.innerHTML = `
       <img class="btn-icon-img" src="./assets/buttons/business.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "national liberation") {
+    btn.classList.add("btn-nationalliberation");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/national.svg" alt="">
+      ${label}
+    `;
+  } else if (lower === "empire building") {
+    btn.classList.add("btn-empirebuilding");
+    btn.innerHTML = `
+      <img class="btn-icon-img" src="./assets/buttons/strength.svg" alt="">
       ${label}
     `;
   } else {
